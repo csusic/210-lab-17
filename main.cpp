@@ -63,18 +63,18 @@ void addTailNode() {
     // create a linked list of size SIZE with random numbers 0-99
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
-        Node *newVal = new Node;
         
-        // adds node at head
-        if (!head) { // if this is the first node, it's the new head
+        Node *newVal = new Node;
+        Node *ptr = nullptr;
+        newVal->value = tmp_val;
+        newVal->next = nullptr;
+        
+        // adds node at tail
+        if (!head) { // if this is the first node, it's the new tail
             head = newVal;
-            newVal->next = nullptr;
-            newVal->value = tmp_val;
         }
-        else { // its a second or subsequent node; place at the head
-            newVal->next = head;
-            newVal->value = tmp_val;
-            head = newVal;
+        else { // its a second or subsequent node; place at the tail
+            
         }
     }
     output(head);
@@ -117,6 +117,7 @@ void insertNode() {
 /*INSERT NODE START*/
     Node *head = nullptr;
     int count = 0;
+    Node * current = head;
     // insert a node
     current = head;
     cout << "After which node to insert 10000? " << endl;
@@ -129,6 +130,7 @@ void insertNode() {
     cin >> entry;
 
     current = head;
+    Node * prev = head;
     prev = head;
     for (int i = 0; i < (entry); i++)
         if (i == 0)
@@ -150,6 +152,7 @@ void deleteList() {
 /*DELETE LINKED LIST START*/
     Node *head = nullptr;
     int count = 0;
+    Node * current = head;
     // deleting the linked list
     current = head;
     while (current) {

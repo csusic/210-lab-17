@@ -74,7 +74,10 @@ void addTailNode() {
             head = newVal;
         }
         else { // its a second or subsequent node; place at the tail
-            
+            ptr = head;
+            while (ptr->next)
+                ptr = ptr->next;
+            ptr->next = newVal;
         }
     }
     output(head);
@@ -126,6 +129,7 @@ void insertNode() {
         cout << "[" << count++ << "] " << current->value << endl;
         current = current->next;
     }
+    int entry;
     cout << "Choice --> ";
     cin >> entry;
 

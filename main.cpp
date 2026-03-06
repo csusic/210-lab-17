@@ -21,23 +21,20 @@ int main() {
     Node *head = nullptr;
     int count = 0;
 
-    /*DELETE LINKED LIST START*/
-    // deleting the linked list
-    current = head;
-    while (current) {
-        head = current->next;
-        delete current;
-        current = head;
-    }
-    head = nullptr;
-    output(head);
+    addFrontNode(); //adding a node to the front
+    addTailNode(); //adding a node to the tail
+    deleteNode(); //deleting a node
+    insertNode(); //inserting a node
+    deleteList(); //deleting the entire linked list
 
     return 0;
 }
 
 //adding a node to the front
-addFrontNode() {
-     /*ADD NODE TO HEAD START*/
+void addFrontNode() {
+/*ADD NODE TO HEAD START*/
+    Node *head = nullptr;
+    int count = 0;
     // create a linked list of size SIZE with random numbers 0-99
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
@@ -59,8 +56,10 @@ addFrontNode() {
 };
 
 //adding a node to the tail
-addTailNode() {
-     /*ADD NODE TO HEAD START*/
+void addTailNode() {
+/*ADD NODE TO TAIL START*/
+    Node *head = nullptr;
+    int count = 0;
     // create a linked list of size SIZE with random numbers 0-99
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
@@ -79,12 +78,13 @@ addTailNode() {
         }
     }
     output(head);
-};
 }; 
 
 //deleting a node
-deleteNode() {
-    /*DELETE NODE START*/
+void deleteNode() {
+/*DELETE NODE START*/
+    Node *head = nullptr;
+    int count = 0;
     // deleting a node
     Node * current = head;
     cout << "Which node to delete? " << endl;
@@ -113,8 +113,10 @@ deleteNode() {
 }; 
 
 //inserting a node
-insertNode() {
-    /*INSERT NODE START*/
+void insertNode() {
+/*INSERT NODE START*/
+    Node *head = nullptr;
+    int count = 0;
     // insert a node
     current = head;
     cout << "After which node to insert 10000? " << endl;
@@ -144,8 +146,19 @@ insertNode() {
 }; 
 
 //deleting the entire linked list
-deleteList() {
-    
+void deleteList() {
+/*DELETE LINKED LIST START*/
+    Node *head = nullptr;
+    int count = 0;
+    // deleting the linked list
+    current = head;
+    while (current) {
+        head = current->next;
+        delete current;
+        current = head;
+    }
+    head = nullptr;
+    output(head);
 }; 
 
 void output(Node * hd) {
